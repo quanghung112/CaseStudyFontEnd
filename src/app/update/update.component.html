@@ -1,0 +1,48 @@
+<main class="my-form">
+  <div class="cotainer">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header">Add Customer</div>
+          <div class="card-body">
+            <form #updateForm (ngSubmit)="update(updateForm)">
+              <div class="form-group row">
+                <label for="name" class="col-md-4 col-form-label text-md-right"> Name</label>
+                <div class="col-md-6">
+                  <input type="text" id="name" value="{{customer.name}}" class="form-control" name="nameCustomer">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="age" class="col-md-4 col-form-label text-md-right">Age</label>
+                <div class="col-md-6">
+                  <input type="number" id="age" value="{{customer.age}}" class="form-control" name="age">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="phone_number" class="col-md-4 col-form-label text-md-right">Phone Number</label>
+                <div class="col-md-6">
+                  <input type="text" id="phone_number" value="{{customer.phone}}" name="phone" class="form-control">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="address" class="col-md-4 col-form-label text-md-right">Address</label>
+                <div class="col-md-6">
+                  <input type="text" id="address" value="{{customer.address}}" name="address" class="form-control">
+                </div>
+              </div>
+              <div class="col-md-6 offset-md-4">
+                <button type="submit" class="btn btn-primary">
+                  Update
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+

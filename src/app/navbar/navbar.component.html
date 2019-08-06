@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" [routerLink]="['/']">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/list']">List</a>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <a (click)="logout($event)" *ngIf="isLogin"> <button type="button" class="btn btn-light btn-lg">Logout</button></a>
+    <a class="navbar-brand" [routerLink]="['/login']" *ngIf="!isLogin"> <button type="button" class="btn btn-light btn-lg">Login</button></a>
+  </div>
+</nav>
+
+

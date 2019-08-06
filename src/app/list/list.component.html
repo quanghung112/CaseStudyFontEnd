@@ -1,0 +1,32 @@
+<div class="container">
+  <h3>List Customer</h3>
+  <a class="navbar-brand" [routerLink]="['/create']" *ngIf="!isLogin"><button type="button" class="btn btn-light btn-lg">Add Customer</button></a>
+  <table class="table">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">STT</th>
+      <th scope="col">Name</th>
+      <th scope="col">Age</th>
+      <th scope="col">Address</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Application</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let customer of data; index as i">
+      <th scope="row">{{i+1}}</th>
+      <td>{{customer.name}}</td>
+      <td>{{customer.age}}</td>
+      <td>{{customer.address}}</td>
+      <td>{{customer.phone}}</td>
+      <td class="td-number">
+        <div class="btn-group">
+          <a [routerLink]="['update', customer.id]"><button class="btn btn-round btn-info btn-sm"> <i class="material-icons">edit</i> </button></a>
+          <a [routerLink]="['delete', customer.id]"><button class="btn btn-round btn-info btn-sm"> <i class="material-icons">delete</i> </button></a>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
