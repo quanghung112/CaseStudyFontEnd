@@ -26,7 +26,6 @@ export class UpdateComponent implements OnInit {
       this.id = params.id;
       this.api.detail(this.id).subscribe(result => {
         this.customer = result;
-        console.log(this.customer);
       });
     });
   }

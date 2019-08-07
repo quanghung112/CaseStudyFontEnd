@@ -26,11 +26,7 @@ export class BackEndApiService {
   }
 
   delete(id: number): Observable<any> {
-    if (confirm('Ban co muon xoa?')) {
       return this.http.delete(`${this.apiUrl}/customers/${id}/delete`);
-    } else {
-      return this.http.get(`${this.apiUrl}/list`);
-    }
   }
 
   detail(id: number): Observable<any> {

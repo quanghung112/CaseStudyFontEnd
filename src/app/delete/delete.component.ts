@@ -18,11 +18,16 @@ export class DeleteComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.activatedRoute.params.subscribe(params => {
-      this.id = params.id;
-      this.api.delete(this.id).subscribe(result => {
-        this.router.navigate(['/list']);
+    if (confirm('ban co muon xoa?')) {
+      this.activatedRoute.params.subscribe(params => {
+        this.id = params.id;
+        this.api.delete(this.id).subscribe(result => {
+          console.log(result);
+          this.router.navigate(['/list']);
+        });
       });
-    });
+    } else {
+      this.router.navigate(['/list']);
+    }
   }
 }
